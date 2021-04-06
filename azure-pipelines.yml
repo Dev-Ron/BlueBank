@@ -28,10 +28,3 @@ stages:
         tags: |
           $(tag)
 
-    - task: AzureAppServiceSettings@1
-      inputs:
-        azureSubscription: 'Azure para estudiantes(51c42cb2-6f78-42ce-8872-d037e6f2cd85)'
-        appName: 'WebAppBluebank'
-        resourceGroupName: 'RGBluebank'
-    
-
