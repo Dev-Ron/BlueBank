@@ -7,14 +7,14 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["BlueBank/BlueBank.csproj", "BlueBank/"]
-RUN dotnet restore "BlueBank/BlueBank.csproj"
+COPY ["BlueBank/BlueBankAPI.csproj", "BlueBank/"]
+RUN dotnet restore "BlueBank/BlueBankAPI.csproj"
 COPY . .
 WORKDIR "/src/BlueBank"
-RUN dotnet build "BlueBank.csproj" -c Release -o /app/build
+RUN dotnet build "BlueBankAPI.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "BlueBank.csproj" -c Release -o /app/publish
+RUN dotnet publish "BlueBankAPI.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
