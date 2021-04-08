@@ -1,0 +1,83 @@
+﻿@page
+@model BlueBankFrontend.Views.Home.IndexModel
+@{
+}
+
+
+@using BlueBankFrontend.Models
+
+<h2>Home</h2>
+
+<style>
+    .OpcionMenu {
+        background-color: #FAFAFF;
+        height: 100px;
+        width: 100px;
+        border-radius: 5px;
+        margin: 70px 35px 0px 35px;
+        border: 1px #b3b3b3 solid;
+        box-shadow: 3px 3px 0 0 #999;
+        font-family: 'Times New Roman', Times, serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background .5s;
+    }
+</style>
+
+<div class="container justify-content-center">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-2 OpcionMenu">
+            <a id="AddCuenta" onclick="AddCuentaMostrar()">
+                <img src="~/css/Icons/1.svg" />
+                Crear cuenta
+            </a>
+        </div>
+        <div class="col-md-2 OpcionMenu">
+            <a id="ConsultarSaldo" onclick="ConsultarSaldoMostrar()">
+                <img src="~/css/Icons/4.svg" />
+                Cosultar saldo
+            </a>
+        </div>
+        <div class="col-md-2 OpcionMenu">
+            <a id="Retirar" onclick="RetirarMostrar()">
+                <img src="~/css/Icons/3.svg" />
+                Retirar
+            </a>
+        </div>
+        <div class="col-md-2 OpcionMenu">
+            <a id="Consignar" onclick="ConsignarMostrar()">
+                <img src="~/css/Icons/2.svg" />
+                Consignar
+            </a>
+        </div>
+    </div>
+</div>
+<hr />
+
+<div>
+
+    <div id="FormCrearCuenta">
+
+    </div>
+
+
+    <div id="FormConsultarSaldo">
+
+    </div>
+
+
+    <div id="FormRetirar">
+
+    </div>
+
+
+    <div id="FormConsignar">
+
+    </div>
+
+
+</div>
+
+
+<script src="~/js/PaginaPrincipal.js"></script>
