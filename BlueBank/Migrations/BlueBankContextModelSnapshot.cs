@@ -81,6 +81,9 @@ namespace BlueBankAPI.Migrations
                     b.Property<DateTime>("Fecha_Modificacion")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("NumeroDocumento")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PrimerApellido")
                         .HasColumnType("nvarchar(max)");
 

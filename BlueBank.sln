@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlueBankAPI", "BlueBank\BlueBankAPI.csproj", "{2DB31C01-99EF-4159-8A29-CC54D28B6C60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueBankFrontend", "BlueBankFrontend\BlueBankFrontend.csproj", "{AEBA4DE0-E382-4AE7-A24F-6ABF15F31DF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlueBankFRONT", "BlueBankFRONT\BlueBankFRONT.csproj", "{9BC15B98-4005-4444-864E-8A071EE725A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{2DB31C01-99EF-4159-8A29-CC54D28B6C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DB31C01-99EF-4159-8A29-CC54D28B6C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DB31C01-99EF-4159-8A29-CC54D28B6C60}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AEBA4DE0-E382-4AE7-A24F-6ABF15F31DF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AEBA4DE0-E382-4AE7-A24F-6ABF15F31DF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AEBA4DE0-E382-4AE7-A24F-6ABF15F31DF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AEBA4DE0-E382-4AE7-A24F-6ABF15F31DF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BC15B98-4005-4444-864E-8A071EE725A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BC15B98-4005-4444-864E-8A071EE725A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BC15B98-4005-4444-864E-8A071EE725A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BC15B98-4005-4444-864E-8A071EE725A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

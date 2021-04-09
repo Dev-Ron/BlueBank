@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Microsoft.EntityFrameworkCore;
 namespace BlueBank.Controllers
 {
     [ApiController]
@@ -43,7 +43,7 @@ namespace BlueBank.Controllers
             ObjectResult resultado;
             try
             {
-                resultado = StatusCode(StatusCodes.Status200OK, _dbContext.Cuenta.FirstOrDefault(r => r.NumeroCuenta == NumeroCuenta));
+                resultado = StatusCode(StatusCodes.Status200OK, _dbContext.Cuenta.Include(r => r.Persona).Include(r => r.Persona.TipoDocumento).FirstOrDefault(r => r.NumeroCuenta == NumeroCuenta));
             }
             catch (Exception e)
             {
@@ -59,7 +59,7 @@ namespace BlueBank.Controllers
             ObjectResult resultado;
             try
             {
-                cuenta.Persona = _dbContext.Persona.FirstOrDefault(r => r.Id == cuenta.Persona.Id);
+                _dbContext.Add(cuenta.Persona);
                 _dbContext.Add(cuenta);
                 _dbContext.SaveChanges();
                 resultado = StatusCode(StatusCodes.Status201Created, cuenta);

@@ -1,0 +1,30 @@
+﻿
+@using BlueBankFRONT.Models
+@using DevExtreme.AspNet.Mvc
+
+@(Html.DevExtreme().Form<Cuenta>()
+            .ID("formCuenta")
+            .ColCount(2)
+            .LabelLocation(FormLabelLocation.Top)
+            .Items(formItems =>
+            {
+                formItems.AddGroup().ColCount(2).Name("DatosPersona").Caption("Datos de la persona")
+                    .Items(s => {
+                        s.AddSimpleFor(r => r.Persona.NumeroDocumento).Label(l => l.Text("Numero de Documento").Location(FormLabelLocation.Top)).Editor(e => e.TextBox());
+                        s.AddSimpleFor(r => r.Persona.PrimerNombre).Label(l => l.Text("Primer Nombre").Location(FormLabelLocation.Top)).Editor(e => e.TextBox());
+                        s.AddSimpleFor(r => r.Persona.SegundoNombre).Label(l => l.Text("Segundo Nombre").Location(FormLabelLocation.Top)).Editor(e => e.TextBox());
+                        s.AddSimpleFor(r => r.Persona.PrimerApellido).Label(l => l.Text("Primer Apellido").Location(FormLabelLocation.Top)).Editor(e => e.TextBox());
+                        s.AddSimpleFor(r => r.Persona.SegundoApellido).Label(l => l.Text("Segundo Apellido").Location(FormLabelLocation.Top)).Editor(e => e.TextBox());
+
+                    });
+
+                formItems.AddGroup().ColCount(2).Name("DatosCuenta").Caption("Datos de la Cuenta")
+                    .Items(s =>
+                    {
+                        s.AddSimpleFor(r => r.NumeroCuenta).Label(l => l.Text("Numero de Cuenta").Location(FormLabelLocation.Top)).Editor(e => e.TextBox());
+                        s.AddSimpleFor(r => r.Valor).Label(l => l.Text("Saldo").Location(FormLabelLocation.Top)).Editor(e => e.TextBox());
+
+                    });
+
+            })
+        )

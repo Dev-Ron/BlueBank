@@ -1,0 +1,93 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@using BlueBankFRONT.Models
+@using DevExtreme.AspNet.Mvc
+@Html.AntiForgeryToken()
+<h2>Home</h2>
+
+<style>
+    .OpcionMenu {
+        background-color: #FAFAFF;
+        height: 100px;
+        width: 100px;
+        border-radius: 5px;
+        margin: 70px 35px 0px 35px;
+        border: 1px #b3b3b3 solid;
+        box-shadow: 3px 3px 0 0 #999;
+        font-family: 'Times New Roman', Times, serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background .5s;
+    }
+</style>
+
+<div class="container">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-2 OpcionMenu">
+            <a id="AddCuenta" onclick="AddCuentaMostrar()">
+                <img src="~/css/Icons/1.svg" />
+                Crear cuenta
+            </a>
+        </div>
+        <div class="col-md-2 OpcionMenu">
+            <a id="ConsultarSaldo" onclick="ConsultarSaldoMostrar()">
+                <img src="~/css/Icons/4.svg" />
+                Cosultar saldo
+            </a>
+        </div>
+        <div class="col-md-2 OpcionMenu">
+            <a id="Retirar" onclick="RetirarMostrar()">
+                <img src="~/css/Icons/3.svg" />
+                Retirar
+            </a>
+        </div>
+        <div class="col-md-2 OpcionMenu">
+            <a id="Consignar" onclick="ConsignarMostrar()">
+                <img src="~/css/Icons/2.svg" />
+                Consignar
+            </a>
+        </div>
+    </div>
+</div>
+<hr />
+
+<div>
+
+    <div style="display:none" id="FormConsultarSaldo" class="container">
+
+        <div class="row" style="margin-bottom:20px;">
+            <div class="col-md-4">
+                <span style="font-size:20px;">Número de cuenta</span>
+
+                @(Html.DevExtreme().TextBox().ID("NumeroCuentaBuscar").Width("100%").Placeholder("Digite numero de cuenta"))
+
+            </div>
+            <div class="col-md-2" style="display:flex; align-items:flex-end; margin-top:20px;">
+                @(Html.DevExtreme().Button().Text("Buscar").ID("btnBuscarCuenta").Width("100%").Type(ButtonType.Default).OnClick("BuscarCuenta"))
+            </div>
+        </div>
+    </div>
+    <div id="FormCuenta" class="container">
+        @Html.Partial("/Pages/FormCuenta.cshtml")
+    </div>
+
+    @(Html.DevExtreme().Button().Text("Enviar").ID("btnEnviarCuenta").Width("100%").Type(ButtonType.Default).OnClick("EnviarCuenta"))
+
+    <div style="display:none" id="FormRetirar">
+
+    </div>
+
+
+    <div style="display:none" id="FormConsignar">
+
+    </div>
+
+
+</div>
+
+<script src="~/js/PaginaPrincipal.js"></script>
