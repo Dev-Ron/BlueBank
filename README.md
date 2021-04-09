@@ -24,6 +24,11 @@ docker push devronald/bluebankfront:latest
 * [Frontend](https://webappbluebankfront.azurewebsites.net/) 
 * [Api REST](https://webappbluebank.azurewebsites.net)
 
+## Tablas Usadas
+
+![image](https://user-images.githubusercontent.com/55601495/114241448-bf3ee100-994e-11eb-9e85-9f8934208e69.png)
+
+
 ## Autor ✒️
 
 * **Ronal Gelvez.**
