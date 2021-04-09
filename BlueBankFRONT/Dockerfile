@@ -8,6 +8,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
+COPY BlueBankFRONT/NuGet.config ./
 COPY ["BlueBankFRONT/BlueBankFRONT.csproj", "BlueBankFRONT/"]
 RUN dotnet restore "BlueBankFRONT/BlueBankFRONT.csproj"
 COPY . .
