@@ -26,7 +26,5 @@ docker push devronald/bluebankfront:latest
 
 ## Autor ✒️
 
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
-
 * **Ronal Gelvez.**
 
