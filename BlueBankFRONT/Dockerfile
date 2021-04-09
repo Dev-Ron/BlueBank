@@ -15,8 +15,7 @@ COPY . .
 WORKDIR "/src/BlueBankFRONT"
 RUN dotnet build "BlueBankFRONT.csproj" -c Release -o /app/build
 
-##Restauranción de las dependencias de nuget
-RUN dotnet restore --configfile NuGet.config "BlueBankFRONT/BlueBankFRONT.csproj" 
+
 
 FROM build AS publish
 RUN dotnet publish "BlueBankFRONT.csproj" -c Release -o /app/publish
