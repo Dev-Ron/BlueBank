@@ -16,7 +16,7 @@ RUN dotnet build "BlueBankAPI.csproj" -c Release -o /app/build
 FROM build AS publish
 RUN dotnet publish "BlueBankAPI.csproj" -c Release -o /app/publish
 
-EXPOSE 8080/tcp
+EXPOSE 3000/tcp
 
 FROM base AS final
 WORKDIR /app
