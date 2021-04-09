@@ -27,7 +27,8 @@ namespace BlueBank.Controllers
             ObjectResult resultado;
             try
             {
-                resultado = StatusCode(StatusCodes.Status200OK, _dbContext.Cuenta.ToList());
+                List<Cuenta> cuentas = _dbContext.Cuenta.ToList();
+                resultado = StatusCode(StatusCodes.Status200OK, cuentas);
             }
             catch (Exception e)
             {
