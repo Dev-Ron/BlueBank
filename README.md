@@ -5,6 +5,9 @@ ahorro. Necesitamos una solución que se ajuste a las necesidades de la compañ�
 permita ser competitivo en un mercado en el cual el tiempo de respuesta, confiabilidad y
 seguridad de la plataforma pueden decidir si la compañía continúa o no_
 
+![image](https://user-images.githubusercontent.com/55601495/114241535-e4cbea80-994e-11eb-9d42-dabfdb2f506c.png)
+
+
 ## Instalacion 🚀
 
 _Necesitas Visual Studio 2017 - 2019, ASP.Net Core 3.1, Un manejador de consultas que admita sql server y Postman.
