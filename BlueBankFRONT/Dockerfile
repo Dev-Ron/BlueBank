@@ -5,6 +5,7 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
+
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ["BlueBankFRONT/BlueBankFRONT.csproj", "BlueBankFRONT/"]
@@ -12,6 +13,9 @@ RUN dotnet restore "BlueBankFRONT/BlueBankFRONT.csproj"
 COPY . .
 WORKDIR "/src/BlueBankFRONT"
 RUN dotnet build "BlueBankFRONT.csproj" -c Release -o /app/build
+
+##Restauranción de las dependencias de nuget
+RUN dotnet restore --configfile NuGet.config "BlueBankFRONT/BlueBankFRONT.csproj" 
 
 FROM build AS publish
 RUN dotnet publish "BlueBankFRONT.csproj" -c Release -o /app/publish
