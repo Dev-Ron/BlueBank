@@ -7,7 +7,8 @@
 @using BlueBankFRONT.Models
 @using DevExtreme.AspNet.Mvc
 @Html.AntiForgeryToken()
-<h2>Home</h2>
+
+<h2>BlueBank</h2>
 
 <style>
     .OpcionMenu {
@@ -23,6 +24,10 @@
         justify-content: center;
         align-items: center;
         transition: background .5s;
+    }
+
+    h2 {
+        text-align:center;
     }
 </style>
 
@@ -57,36 +62,29 @@
 <hr />
 
 <div>
+    <div id="FormCuentasDiv">
+        <div style="display:none" id="FormConsultarSaldo" class="container">
+            <div class="row" style="margin-bottom:30px;">
+                <div class="col-md-4">
+                    <span style="font-size:20px;">Número de cuenta</span>
 
-    <div style="display:none" id="FormConsultarSaldo" class="container">
+                    @(Html.DevExtreme().TextBox().ID("NumeroCuentaBuscar").Width("100%").Placeholder("Digite numero de cuenta"))
 
-        <div class="row" style="margin-bottom:20px;">
-            <div class="col-md-4">
-                <span style="font-size:20px;">Número de cuenta</span>
-
-                @(Html.DevExtreme().TextBox().ID("NumeroCuentaBuscar").Width("100%").Placeholder("Digite numero de cuenta"))
-
+                </div>
+                <div class="col-md-2" style="display:flex; align-items:flex-end; margin-top:20px;">
+                    @(Html.DevExtreme().Button().Text("Buscar").ID("btnBuscarCuenta").Width("100%").Type(ButtonType.Default).OnClick("BuscarCuenta"))
+                </div>
             </div>
-            <div class="col-md-2" style="display:flex; align-items:flex-end; margin-top:20px;">
-                @(Html.DevExtreme().Button().Text("Buscar").ID("btnBuscarCuenta").Width("100%").Type(ButtonType.Default).OnClick("BuscarCuenta"))
-            </div>
+            <hr />
+        </div>
+        <div id="FormCuenta" class="container">
+            @Html.Partial("/Pages/FormCuenta.cshtml")
         </div>
     </div>
-    <div id="FormCuenta" class="container">
-        @Html.Partial("/Pages/FormCuenta.cshtml")
+  
+    <div style="display:none" id="FormMovimientosDiv">
+        @Html.Partial("/Pages/FormMovimiento.cshtml")
     </div>
-
-    @(Html.DevExtreme().Button().Text("Enviar").ID("btnEnviarCuenta").Width("100%").Type(ButtonType.Default).OnClick("EnviarCuenta"))
-
-    <div style="display:none" id="FormRetirar">
-
-    </div>
-
-
-    <div style="display:none" id="FormConsignar">
-
-    </div>
-
 
 </div>
 

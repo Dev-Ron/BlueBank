@@ -73,7 +73,7 @@ namespace BlueBank.Controllers
 
         // POST api/<CuentaController>
         [HttpPost("GenerarMovimiento")]
-        public IActionResult Post(Movimiento movimiento)
+        public IActionResult Post([FromBody] Movimiento movimiento)
         {
             ObjectResult resultado;
             try
@@ -82,6 +82,7 @@ namespace BlueBank.Controllers
                 cuenta.Valor += movimiento.Valor;
                 _dbContext.SaveChanges();
 
+                movimiento.Cuenta = cuenta;
                 _dbContext.Add(movimiento);
                 _dbContext.SaveChanges();
 

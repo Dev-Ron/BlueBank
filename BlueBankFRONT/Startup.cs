@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft;
 
 namespace BlueBankFRONT
 {
@@ -23,7 +24,10 @@ namespace BlueBankFRONT
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddRazorPages().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
+            services.AddRazorPages().AddJsonOptions(options => options.JsonSerializerOptions.IgnoreNullValues = true);
+        
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

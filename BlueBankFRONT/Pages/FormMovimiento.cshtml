@@ -1,0 +1,20 @@
+﻿@using BlueBankFRONT.Models
+@using DevExtreme.AspNet.Mvc
+
+@(Html.DevExtreme().Form<Movimiento>()
+            .ID("formMovimiento")
+            .ColCount(2)
+            .LabelLocation(FormLabelLocation.Top)
+            .Items(formItems =>
+            {
+                formItems.AddGroup().ColCount(2).Name("DatosMovimiento").Caption("Datos del movimiento")
+                    .Items(s => {
+                        s.AddSimpleFor(r => r.Cuenta.NumeroCuenta).Label(l => l.Text("Numero de Cuenta").Location(FormLabelLocation.Top)).Editor(e => e.TextBox());
+                        s.AddSimpleFor(r => r.Valor).Label(l => l.Text("Monto").Location(FormLabelLocation.Top)).Editor(e => e.NumberBox().Format("$ #,##0.##"));
+                    });
+            })
+        )
+
+<div style="display:flex; float:left;">
+    @(Html.DevExtreme().Button().Text("Enviar").ID("btnEnviarMovimiento").Type(ButtonType.Default).OnClick("EnviarMovimiento"))
+</div>

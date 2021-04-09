@@ -22,9 +22,13 @@
                     .Items(s =>
                     {
                         s.AddSimpleFor(r => r.NumeroCuenta).Label(l => l.Text("Numero de Cuenta").Location(FormLabelLocation.Top)).Editor(e => e.TextBox());
-                        s.AddSimpleFor(r => r.Valor).Label(l => l.Text("Saldo").Location(FormLabelLocation.Top)).Editor(e => e.TextBox());
+                        s.AddSimpleFor(r => r.Valor).Label(l => l.Text("Saldo").Location(FormLabelLocation.Top)).Editor(e => e.NumberBox().Format("$ #,##0.##"));
 
                     });
 
             })
         )
+
+<div style="display:flex; float:right;">
+    @(Html.DevExtreme().Button().Text("Enviar").ID("btnEnviarCuenta").Type(ButtonType.Default).OnClick("EnviarCuenta"))
+</div>
